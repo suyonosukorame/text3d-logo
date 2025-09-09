@@ -1,0 +1,50 @@
+body {
+  margin: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+}
+
+#saveBtn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #FFE100, #FF9B00);
+  color: #FF9B00;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px #FF9B00;
+  z-index: 10;
+  transition: all 0.25s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#saveBtn:hover {
+  background: linear-gradient(135deg, #ffb400, #ff6600);
+  color: white;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 16px #FF9B00;
+}
+
+#notif {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #FF9B00;
+  color: white;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 20;
+}
