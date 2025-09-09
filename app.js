@@ -10,12 +10,28 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 addLights(scene);
-createText(scene);
+const textGroup = createText();
+scene.add(textGroup);
 
 camera.position.z = 12;
 
+// Clock untuk timing animasi
+const clock = new THREE.Clock();
+
 function animate() {
   requestAnimationFrame(animate);
+
+  const elapsedTime = clock.getElapsedTime();
+
+  // Contoh animasi: membuat setiap huruf bergelombang
+  if (textGroup.children.length > 0) {
+    textGroup.children.forEach(wordGroup => {
+      wordGroup.children.forEach((letter, index) => {
+        letter.position.y = Math.sin(elapsedTime * 3 + index * 0.5) * 0.2;
+      });
+    });
+  }
+
   renderer.render(scene, camera);
 }
 animate();

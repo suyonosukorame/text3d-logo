@@ -3,12 +3,59 @@
 <head>
   <meta charset="UTF-8">
   <title>3D Text Logo</title>
+  <!-- Menambahkan Favicon (ikon tab browser) menggunakan SVG emoji -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖼️</text></svg>">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <button id="saveBtn">⬇️ Save PNG</button>
-  <div id="notif">✅ PNG exported!</div>
+  <body>
+    <!-- Tombol dan notifikasi untuk menyimpan teks 3D saja -->
+    <button id="saveBtn" title="Hanya menyimpan Teks 3D">⬇️ Save 3D Text</button>
+    <div id="notif">✅ PNG exported!</div>
 
-  <script type="module" src="app.js"></script>
-</body>
+    <!-- Konten Poster -->
+    <div class="poster-container">
+      <header class="poster-header">
+        <p class="opening-badge">Telah Dibuka</p>
+        <p class="bimbingan-text">Bimbingan Ilmiah:</p>
+        <!-- Judul utama "TAZKIYATUN NUFUS" akan dirender oleh Three.js di sini -->
+        <h1 class="main-title-placeholder">TAZKIYATUN NUFUS</h1>
+        <p class="new-material-info">Materi baru WAG Dirosah Islamiyah</p>
+        <h2>Pembahasan Sistematis Upaya Menyucikan Jiwa<br>Sesuai Al-Qur'an dan As-Sunnah dengan Pemahaman Salafus Shalih</h2>
+      </header>
+
+      <!-- Grid untuk konten utama -->
+      <div class="content-grid">
+        <!-- Kolom Kiri: Info Utama -->
+        <div class="info-card">
+          <div class="info-section">
+            <p class="label">Pemateri</p>
+            <p class="speaker">Al-Ustadz Dr. Muhammad Arifin Baderi, Lc., M.A.</p>
+            <p class="honorific">حفظه الله تعالى</p>
+          </div>
+
+          <div class="info-section">
+            <p class="label">Format Program</p>
+            <p>Faidah Ilmiah Harian<br>(Audio 3-5 Menit & Transkrip)</p>
+          </div>
+        </div>
+
+        <!-- Kolom Kanan: Jadwal & Pendaftaran -->
+        <div class="info-card">
+          <div class="info-section">
+            <p class="label">Jadwal Penting</p>
+            <p><strong>Pendaftaran:</strong> 19 Sep - 19 Okt 2025</p>
+            <p><strong>Materi Perdana:</strong> 20 Oktober 2025</p>
+          </div>
+
+          <div class="info-section">
+            <p class="label">Informasi & Pendaftaran</p>
+            <p><strong>Link:</strong> <a href="http://daftar.dirosahislamiyah.com" target="_blank">daftar.dirosahislamiyah.com</a></p>
+            <p><strong>Narahubung:</strong> 083806000001</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
 </html>

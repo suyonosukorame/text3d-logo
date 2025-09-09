@@ -1,21 +1,22 @@
-# 🖼️ 3D Text Logo Generator
+# 🖼️ Poster Undangan Ilmiah dengan Teks 3D
 
-Sebuah aplikasi web sederhana untuk membuat logo teks 3D menggunakan [Three.js](https://threejs.org/). Anda dapat menyesuaikan teks, material, pencahayaan, dan mengekspor hasil akhirnya sebagai gambar PNG.
+Sebuah aplikasi web untuk membuat poster undangan digital dengan elemen judul teks 3D yang dinamis menggunakan [Three.js](https://threejs.org/).
 
 
-*(Anda bisa mengganti gambar ini dengan screenshot atau GIF dari proyek Anda)*
+*(Gantilah gambar ini dengan screenshot poster yang sudah jadi)*
 
 ## ✨ Fitur
 
 -   **Render Teks 3D**: Merender teks dalam ruang 3D dengan geometri yang dapat disesuaikan.
+-   **Layout Poster**: Informasi acara (pemateri, jadwal, dll.) ditampilkan dengan jelas menggunakan HTML & CSS.
 -   **Kode Modular**: Proyek dibagi menjadi modul-modul logis untuk pencahayaan, pembuatan teks, dan aplikasi utama.
--   **Ekspor ke PNG**: Simpan tampilan saat ini dengan mudah sebagai gambar PNG berkualitas tinggi.
+-   **Ekspor Teks 3D**: Simpan elemen teks 3D saja sebagai gambar PNG transparan.
 -   **Pintasan Keyboard**: Tekan tombol `S` untuk menyimpan hasil karya Anda dengan cepat.
 -   **Desain Responsif**: Ukuran kanvas secara otomatis menyesuaikan dengan jendela browser.
 
 ## 🚀 Memulai
 
-Untuk menjalankan proyek ini di komputer lokal Anda, Anda memerlukan server web lokal. Hal ini karena proyek menggunakan ES Modules, yang memiliki batasan keamanan saat dijalankan langsung dari sistem file lokal (`file:///...`).
+Untuk menjalankan proyek ini di komputer lokal Anda, Anda memerlukan server web lokal. Hal ini karena proyek menggunakan ES Modules yang memiliki batasan keamanan saat dijalankan langsung dari sistem file (`file:///...`).
 
 ### Prasyarat
 
@@ -49,14 +50,16 @@ Untuk menjalankan proyek ini di komputer lokal Anda, Anda memerlukan server web 
 ## 🛠️ Penggunaan
 
 -   Teks 3D akan ditampilkan di layar.
--   Untuk menyimpan gambar, klik tombol **⬇️ Save PNG** di pojok kiri atas.
--   Sebagai alternatif, Anda dapat menekan tombol **`S`** pada keyboard untuk mengunduh gambar. Notifikasi akan muncul untuk mengonfirmasi bahwa file PNG telah diekspor.
+-   Untuk menyimpan **hanya teks 3D-nya saja** (dengan latar belakang transparan), klik tombol **⬇️ Save 3D Text** atau tekan tombol `S`.
+-   Untuk menyimpan **keseluruhan poster**, gunakan fitur *screenshot* pada browser atau sistem operasi Anda.
 
 ## 🎨 Kustomisasi
 
--   **Konten & Gaya Teks**: Untuk mengubah string teks, font, ukuran, warna, dan properti material, Anda perlu memodifikasi kode di dalam file `text3d.js`.
+-   **Konten & Gaya Teks 3D**: Untuk mengubah string teks, font, ukuran, dan properti material 3D, modifikasi file `text3d.js`.
+-   **Konten Poster**: Untuk mengubah detail acara seperti pemateri, jadwal, dan tautan, edit file `index.html`.
 -   **Pencahayaan**: Untuk menyesuaikan pencahayaan (misalnya, warna, intensitas, posisi), edit kode di dalam file `lights.js`.
 -   **Animasi**: Untuk menambah atau mengubah animasi (seperti rotasi), modifikasi fungsi `animate()` di dalam file `app.js`.
+-   **Tampilan Poster**: Untuk mengubah warna, font, dan tata letak poster, modifikasi file `style.css`.
 
 ## 📜 Lisensi
 

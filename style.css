@@ -1,50 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 body {
   margin: 0;
-  background: transparent;
-  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  /* Fallback color jika gambar tidak termuat */
+  background-color: #111;
+  color: #f0f0f0;
+  overflow: hidden; /* Mencegah scroll */
 }
 
+/* Canvas untuk render 3D */
 canvas {
-  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Letakkan di belakang konten lain */
 }
 
-#saveBtn {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  padding: 10px 18px;
-  border: none;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #FFE100, #FF9B00);
-  color: #FF9B00;
-  font-weight: bold;
-  font-size: 15px;
-  cursor: pointer;
-  box-shadow: 0 4px 12px #FF9B00;
-  z-index: 10;
-  transition: all 0.25s ease-in-out;
-  display: inline-flex;
+.poster-container {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+  position: relative; /* Membuat stacking context */
+
+  /* Layering background: gradien di atas gambar */
+  background-image: 
+    radial-gradient(ellipse at center, rgba(10, 10, 10, 0.7) 0%, rgba(10, 10, 10, 0.95) 80%, #111 100%),
+    url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?q=80&w=2071&auto-format&fit=crop');
+  background-size: cover;
+  background-position: center center;
 }
 
-#saveBtn:hover {
-  background: linear-gradient(135deg, #ffb400, #ff6600);
-  color: white;
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 6px 16px #FF9B00;
+.opening-badge {
+  background-color: #ffd700;
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.3rem 1.2rem;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.poster-header .bimbingan-text {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin: 0;
+  color: #aaa;
+}
+
+.main-title-placeholder {
+  /* Sembunyikan teks HTML, karena akan digantikan oleh 3D */
+  visibility: hidden;
+  height: 4rem; /* Kurangi tinggi agar lebih rapat */
+  margin: 1rem 0; /* Kurangi margin */
+  line-height: 1; /* Reset line-height */
+}
+
+.new-material-info {
+  font-size: 1rem;
+  color: #ccc;
+  font-weight: 400;
+  margin: 0;
+  margin-top: -0.5rem; /* Tarik ke atas agar lebih dekat dengan judul 3D */
+  margin-bottom: 1.5rem;
+}
+
+.poster-header h2 {
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-top: 0; /* Hapus margin atas karena sudah ada di elemen sebelumnya */
+  color: #ccc;
+  line-height: 1.6;
+  max-width: 60ch; /* Batasi lebar teks agar lebih mudah dibaca */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid untuk konten utama */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Kolom responsif */
+  gap: 2rem;
+  width: 100%;
+  max-width: 900px; /* Batasi lebar maksimum grid */
+  margin-top: 2rem;
+}
+
+.info-card {
+  background-color: rgba(255, 255, 255, 0.03); /* Latar belakang subtil */
+  border: 1px solid rgba(255, 215, 0, 0.2); /* Border emas transparan */
+  border-radius: 12px; /* Sudut melengkung */
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Jarak antar section di dalam card */
+}
+
+.info-section .label {
+  color: #ffd700; /* Warna emas agar serasi */
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase; /* Modern touch */
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  display: block; /* Jadikan block agar paragraf di bawahnya mulai di baris baru */
+}
+
+.info-section p {
+  margin: 0.3rem 0;
+  line-height: 1.5;
+}
+
+.speaker {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff; /* Lebih terang */
+}
+
+.honorific {
+  font-size: 1.1rem;
+  color: #ffd700;
+  margin-top: 0.5rem;
+}
+
+.info-card a {
+  color: #ffeb99;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.info-card a:hover {
+  text-decoration: underline;
+}
+
+/* Tombol Save & Notifikasi */
+#saveBtn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 10;
+  /* Styling lainnya dari file lama Anda bisa ditambahkan di sini */
 }
 
 #notif {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  padding: 6px 12px;
-  border-radius: 6px;
-  background: #FF9B00;
-  color: white;
-  font-size: 14px;
+  position: fixed;
+  top: 60px;
+  left: 15px;
+  z-index: 10;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  z-index: 20;
+  transition: opacity 0.5s;
+  /* Styling lainnya dari file lama Anda bisa ditambahkan di sini */
 }
